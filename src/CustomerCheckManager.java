@@ -1,11 +1,10 @@
 
-public class CustomerCheckManager implements ICustomerCheckService{
+public class CustomerCheckManager implements ICustomerCheckService {
 
 	@Override
-	public void CheckIfRealPerson(Customer customer) {
-		System.out.println(customer.getFirstName()+" Doğrulandı");
+	public boolean CheckIfRealPerson(Customer customer) {
+		System.out.println("CustomerCheckManager tarafÄ±ndan doÄŸrulandÄ±");
+		return true;
 	}
-	
-	
 
 }

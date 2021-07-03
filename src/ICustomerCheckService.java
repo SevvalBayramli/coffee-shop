@@ -1,5 +1,5 @@
 
 interface ICustomerCheckService {
-	void CheckIfRealPerson(Customer customer) ;
+	boolean CheckIfRealPerson(Customer customer) ;
 
 }
