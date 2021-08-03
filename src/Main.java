@@ -1,34 +1,19 @@
+import java.rmi.RemoteException;
+
+
 
 public class Main {
-
-	public static void main(String[] args) {
+	public static void main(String[] args) throws NumberFormatException, RemoteException {
 		
-		NeroCustomerManager neroCustomerManager = new NeroCustomerManager();
-		Customer customer =new Customer();
-		customer.setId(1);
-		customer.setFirstName("Ahmet");
-		customer.setLastName("YÄ±lmaz");
-		customer.setDateTime("1985");
-		customer.setNationalityId("111111111");
-		neroCustomerManager.Save(customer);
+		Customer customer=new Customer(24764140536L, "ÞEVVAL", "BAYRAMLI", 2002);
+		customer.setDateOfTime(2002);
+		customer.setFirstName("ÞEVVAL");
+		customer.setLastName("BAYRAMLI");
+		customer.setNationalityId(24764140536L);
 		
+		BaseCustomerManager customerManager =new StarbucksCustomerManager(new MerniceServiceAdapter());
+				customerManager.Save(new Customer(24764140536L, "BAYRAMLI","ÞEVVAL",2002));
 		
-		StarbucksCustomerManager starbucksCustomerManager = new StarbucksCustomerManager();
-		customer.setId(1);
-		customer.setFirstName("Åževval");
-		customer.setLastName("BayramlÄ±");
-		customer.setDateTime("2002");
-		customer.setNationalityId("2222222222");
-		starbucksCustomerManager.Save(customer);
-
-		/*
-		if (starbucksCustomerManager.CheckIfRealPerson(customer)) {
-			starbucksCustomerManager.Save(customer);
-		}
-		*/
-			
-				
-
 	}
 
 }

@@ -1,17 +1,20 @@
-
-public class Customer {
-	private int id;
+public class Customer implements IEntity {
+	
 	private String FirstName;
 	private String LastName ;
-	private String DateTime;
-	private String NationalityId;
+	private int DateOfTime;
+	private long NationalityId;
 	
-	public int getId() {
-		return id;
+	public Customer (long NationalityId, String LastName, String FirstName , int DateOfTime) {
+		super();
+		
+		this.FirstName=FirstName;
+		this.LastName=LastName;
+		this.DateOfTime=DateOfTime;
+		this.NationalityId=NationalityId;
 	}
-	public void setId(int id) {
-		this.id = id;
-	}
+	
+	
 	public String getFirstName() {
 		return FirstName;
 	}
@@ -24,16 +27,16 @@ public class Customer {
 	public void setLastName(String lastName) {
 		LastName = lastName;
 	}
-	public String getDateTime() {
-		return DateTime;
+	public int getDateOfTime() {
+		return DateOfTime;
 	}
-	public void setDateTime(String dateTime) {
-		DateTime = dateTime;
+	public void setDateOfTime(int dateOfTime) {
+		DateOfTime = dateOfTime;
 	}
-	public String getNationalityId() {
+	public long getNationalityId() {
 		return NationalityId;
 	}
-	public void setNationalityId(String nationalityId) {
+	public void setNationalityId(long nationalityId) {
 		NationalityId = nationalityId;
 	}
 	
