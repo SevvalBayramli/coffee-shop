@@ -5,14 +5,18 @@ import java.rmi.RemoteException;
 public class Main {
 	public static void main(String[] args) throws NumberFormatException, RemoteException {
 		
-		Customer customer=new Customer(24764140536L, "ÞEVVAL", "BAYRAMLI", 2002);
+		Customer customer=new Customer();
+		//Customer customer=new Customer();
 		customer.setDateOfTime(2002);
 		customer.setFirstName("ÞEVVAL");
 		customer.setLastName("BAYRAMLI");
-		customer.setNationalityId(24764140536L);
+		customer.setNationalityId(111111111L);
 		
 		BaseCustomerManager customerManager =new StarbucksCustomerManager(new MerniceServiceAdapter());
-				customerManager.Save(new Customer(24764140536L, "BAYRAMLI","ÞEVVAL",2002));
+				customerManager.Save(new Customer(111111111L, "BAYRAMLI","ÞEVVAL",2002));
+				
+		BaseCustomerManager customerManager1 =new NeroCustomerManager();
+				customerManager1.Save(customer);
 		
 	}
 

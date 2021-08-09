@@ -5,6 +5,10 @@ public class Customer implements IEntity {
 	private int DateOfTime;
 	private long NationalityId;
 	
+	public Customer() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public Customer (long NationalityId, String LastName, String FirstName , int DateOfTime) {
 		super();
 		
